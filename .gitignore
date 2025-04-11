@@ -1,0 +1,36 @@
+# Solution files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio cache/options directory
+.vs/
+
+# MonoGame specific
+Content/bin/
+Content/obj/
+*.mgcb
+*.xnb
