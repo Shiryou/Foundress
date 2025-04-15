@@ -8,9 +8,15 @@ public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
+    private Preferences _preferences;
 
-    public Game1()
+    public Game1(Preferences prefs = null)
     {
+        if (prefs == null)
+        {
+            prefs = new Preferences();
+        }
+        _preferences = prefs;
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
@@ -22,9 +28,7 @@ public class Game1 : Game
 
         base.Initialize();
 
-        _graphics.PreferredBackBufferWidth = 1280;
-        _graphics.PreferredBackBufferHeight = 720;
-        _graphics.ApplyChanges();
+        ChangeResolution();
     }
 
     protected override void LoadContent()
@@ -51,5 +55,22 @@ public class Game1 : Game
         // TODO: Add your drawing code here
 
         base.Draw(gameTime);
+    }
+
+    public void ChangeResolution(int width = 0, int height = 0, bool? windowed = null )
+    {
+        if( width <= 0 || height <= 0 )
+        {
+            width = _preferences.Resolution.Width;
+            height = _preferences.Resolution.Height;
+        }
+        if (windowed == null)
+        {
+            windowed = !_preferences.IsFullScreen;
+        }
+        _graphics.PreferredBackBufferWidth = width;
+        _graphics.PreferredBackBufferHeight = height;
+        _graphics.IsFullScreen = !(bool)windowed;
+        _graphics.ApplyChanges();
     }
 }
