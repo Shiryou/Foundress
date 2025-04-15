@@ -10,7 +10,7 @@ Foundress is currently in the early development stage and does not yet provide p
 git clone https://github.com/Shiryou/Foundress.git
 cd Foundress
 dotnet build
-dotnet run
+dotnet run --project Foundress
 ```
 
 ## Development Setup
@@ -46,4 +46,4 @@ If you find a bug, please open an issue with:
 ## Project Structure
 
 - `FormicidaeLib/`: Core library containing ant colony simulation logic
-- `Foundress/`: MonoGame-based graphics logic
+- `Foundress/`: MonoGame-based 2D game project
