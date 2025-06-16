@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Foundress.Entities;
+
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -7,8 +9,8 @@ namespace Foundress;
 public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
-    private SpriteBatch _spriteBatch;
     private Preferences _preferences;
+    private Camera _camera;
 
     public Game1(Preferences prefs = null)
     {
@@ -19,6 +21,7 @@ public class Game1 : Game
         _preferences = prefs;
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
+        this.Window.Title = "Foundress";
         IsMouseVisible = true;
     }
 
@@ -29,12 +32,11 @@ public class Game1 : Game
         base.Initialize();
 
         ChangeResolution();
+        _camera = new Camera(GraphicsDevice);
     }
 
     protected override void LoadContent()
     {
-        _spriteBatch = new SpriteBatch(GraphicsDevice);
-
         // TODO: use this.Content to load your game content here
     }
 
@@ -43,7 +45,7 @@ public class Game1 : Game
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
 
-        // TODO: Add your update logic here
+        _camera.Update(gameTime);
 
         base.Update(gameTime);
     }
