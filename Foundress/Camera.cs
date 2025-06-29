@@ -62,9 +62,9 @@ public class Camera
             _farPlaneDistance);
     }
 
-    public void Update(GameTime gameTime)
+    public void Update(GameTime gameTime, KeyboardState? keyboardState = null)
     {
-        var keyboard = Keyboard.GetState();
+        var keyboard = keyboardState ?? Keyboard.GetState();
         var mouse = Mouse.GetState();
 
         // Handle keyboard input for camera movement
