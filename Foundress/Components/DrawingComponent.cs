@@ -1,5 +1,5 @@
 ﻿using Foundress.Entities;
-using Foundress.Supports;
+using Foundress.Utilities;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;

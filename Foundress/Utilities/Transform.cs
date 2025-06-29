@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Microsoft.Xna.Framework;
 
-namespace Foundress.Supports
+namespace Foundress.Utilities
 {
     public class Transform
     {

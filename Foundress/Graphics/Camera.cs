@@ -1,10 +1,11 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
+using Foundress.Entities;
 
-namespace Foundress;
+namespace Foundress.Graphics;
 
-public class Camera
+public class Camera : Entity
 {
     private Vector3 _position;  // Where the camera is
     private Vector3 _target;    // What the camera is looking at

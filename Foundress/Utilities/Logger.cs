@@ -2,7 +2,7 @@ using Serilog;
 using Serilog.Events;
 using System;
 
-namespace Foundress.Supports
+namespace Foundress.Utilities
 {
     public static class Logger
     {
