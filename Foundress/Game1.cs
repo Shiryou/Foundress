@@ -12,7 +12,7 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private Preferences _preferences;
     private Camera _camera;
-    private Console _console;
+    private Supports.Console _console;
     private SpriteBatch _spriteBatch;
 
     private KeyboardState _previousKeyboard;
@@ -74,7 +74,7 @@ public class Game1 : Game
         // Initialize console with the loaded font
         try
         {
-            _console = new Console(GraphicsDevice, consoleFont, () => this.Exit(), consoleBoldFont);
+            _console = new Supports.Console(GraphicsDevice, consoleFont, () => this.Exit(), consoleBoldFont);
             Logger.Info($"Console initialized with font: {consoleFont != null}");
         }
         catch (Exception ex)
@@ -106,7 +106,7 @@ public class Game1 : Game
             Logger.Error("Console is null in Update method! Attempting to initialize...");
             try
             {
-                _console = new Console(GraphicsDevice);
+                _console = new Supports.Console(GraphicsDevice);
                 _spriteBatch = new SpriteBatch(GraphicsDevice);
                 Logger.Warn("Console initialized in Update method");
             }

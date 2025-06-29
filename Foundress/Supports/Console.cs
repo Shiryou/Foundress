@@ -1,12 +1,12 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Foundress.Supports;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Foundress
+namespace Foundress.Supports
 {
     public class Console
     {
@@ -408,7 +408,8 @@ namespace Foundress
                     // Add cursor (use ASCII character instead of Unicode)
                     inputText += "_";
                 }
-                spriteBatch.DrawString(_font, $"> {inputText}", _inputPosition, Color.Yellow);
+                Color promptColor = _isActive ? Color.Yellow : Color.Gray;
+                spriteBatch.DrawString(_font, $"> {inputText}", _inputPosition, promptColor);
             }
             else
             {
