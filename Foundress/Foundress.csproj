@@ -8,12 +8,12 @@
     <TieredCompilation>false</TieredCompilation>
     <AssemblyName>Foundress</AssemblyName>
     <Authors>Kiran Welle</Authors>
-    <Company>© Kiran Welle</Company>
+    <Company>Â© Kiran Welle</Company>
     <Title>Shiryou.Foundress</Title>
     <RepositoryUrl>https://github.com/Shiryou/Foundress</RepositoryUrl>
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Copyright>© Kiran Welle</Copyright>
+    <Copyright>Â© Kiran Welle</Copyright>
     <Product>Foundress</Product>
     <Description>An ant colony simulator where players take on the role of a queen ant establishing and growing her colony.</Description>
   </PropertyGroup>
@@ -54,6 +54,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Serilog" Version="4.3.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FormicidaeLib\FormicidaeLib.csproj" />
