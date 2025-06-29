@@ -10,6 +10,11 @@ namespace Foundress.Supports
         private static LogEventLevel _level = LogEventLevel.Debug;
         private static string _logFilePath = "log/log.txt";
 
+        public static LogEventLevel Level
+        {
+            get { return _level; }
+        }
+
         // Event for log message callbacks
         public static event Action<string, string> OnLogMessage;
 
@@ -34,7 +39,7 @@ namespace Foundress.Supports
             {
                 if (exception != null) {
                     Log.Write(level, message, exception);
-                    OnLogMessage?.Invoke(level.ToString(), message + " For more information, check the error log.");
+                    OnLogMessage?.Invoke(level.ToString(), $"{message} For more information, check the error log.");
                 } else {
                     Log.Write(level, message);
                     OnLogMessage?.Invoke(level.ToString(), message);

@@ -3,9 +3,13 @@ using Foundress.Supports;
 
 try
 {
-    Logger.Init("logs/foundress.log", Serilog.Events.LogEventLevel.Debug);
+    Serilog.Events.LogEventLevel level = Serilog.Events.LogEventLevel.Information;
+#if DEBUG
+    level = Serilog.Events.LogEventLevel.Debug;
+#endif
+    Logger.Init("logs/foundress.log", level);
     Logger.Info("Starting Foundress...");
-    
+
     using var game = new Foundress.Game1();
     game.Run();
     
